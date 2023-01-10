@@ -1,13 +1,15 @@
 import io.restassured.RestAssured;
-import static io.restassured.RestAssured.*;
-import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
+import static io.restassured.RestAssured.given;
+
 public class APITests {
+
     @Test
-    void test(){
-        RestAssured.baseURI="https://rahulshettyacademy.com";
-        given().log().all().queryParam("key","qaclick123").header("Content-Type","application/json")
+    void test() {
+
+        RestAssured.baseURI = "https://rahulshettyacademy.com";
+        given().log().all().queryParam("key", "qaclick123").header("Content-Type", "application/json")
                 .body("{\n" +
                         "  \"location\": {\n" +
                         "    \"lat\": -38.383494,\n" +
